@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -71,7 +71,7 @@ namespace Utilla.Utils
 		/// <param name="casual">Whether or not to make the room casual.</param>
 		public static void JoinModdedLobby(string map, bool casual = false)
 		{
-			string gameModeName = "infection_MOD_" + map;
+			string gameModeName = "MODDED_" + map;
 			PhotonNetworkController photonNetworkController = PhotonNetworkController.Instance;
 
 			string queue = casual ? "CASUAL" : "DEFAULT";
@@ -106,7 +106,7 @@ namespace Utilla.Utils
 				joinTrigger.makeSureThisIsDisabled = Array.Empty<GameObject>();
 				joinTrigger.makeSureThisIsEnabled = Array.Empty<GameObject>();
 			}
-			joinTrigger.gameModeName = gameModeName;
+			joinTrigger.forceGameType = gameModeName;
 			photonNetworkController.AttemptToJoinPublicRoom(joinTrigger);
 		}
 
