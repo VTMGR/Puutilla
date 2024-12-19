@@ -12,4 +12,3 @@ Go to the [latest release of this mod](https://github.com/VTMGR/Ziptilla/release
 # Disclaimers
 ## I am not responsible for any restrictions, or suspensions put on your account. What you do with this modified version is at your own risk.
 ## This product is not affiliated with Gorilla Tag or Another Axiom LLC and is not endorsed or otherwise sponsored by Another Axiom LLC. Portions of the materials contained herein are property of Another Axiom LLC. ©2021 Another Axiom LLC.
-## ⚠ This current build hasn't been tested yet, so It might not even work at all right now 💀
