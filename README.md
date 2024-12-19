@@ -6,8 +6,10 @@ Original mod by [legoandmars](https://github.com/legoandmars/Utilla).
 Ziptilla is a modified version of Utilla that works exactly the same, except it removes the restriction of only being able to use "legal mods" in modded lobbies. With Ziptilla, you can use any mod that depends on Utilla in public lobbies, which basically turns every legal mod into a cheat.
 
 ## Installation
-
 Go to the [latest release of this mod](https://github.com/VTMGR/Ziptilla/releases/latest) and put the DLL Into your plugins folder!
+
+## Bugs
+The gamemode buttons for modded casual, modded infection, etc are broken in current utilla and I am too lazy to fix them :p
 
 # Disclaimers
 ## I am not responsible for any restrictions, or suspensions put on your account. What you do with this modified version is at your own risk.
