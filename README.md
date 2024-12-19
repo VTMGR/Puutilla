@@ -3,7 +3,7 @@
 Original mod by [legoandmars](https://github.com/legoandmars/Utilla).
 
 # Ziptilla
-A PC library for Gorilla Tag that handles various room-related things (and more?)
+A Modified version of Utilla (APC library for Gorilla Tag that handles various room-related things)
 
 ## Installation
 
