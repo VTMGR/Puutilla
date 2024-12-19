@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
@@ -33,34 +33,13 @@ namespace Utilla
                             currentRoom.CustomProperties.ContainsKey("Description"); // Room Browser rooms
 				if (currentRoom.CustomProperties.TryGetValue("gameMode", out var gamemodeObject))
 				{
-                    gamemode = gamemodeObject as string;
-				}
-            }
+					gamemode = "MODDED_" + (currentRoom.CustomProperties["gameMode"] as string);
+                    currentRoom.CustomProperties["gameMode"] = gamemode;
+                }
+			}
 
 			// TODO: Generate dynamically
-			var prefix = "ERROR";
-			if (gamemode.Contains(Models.Gamemode.GamemodePrefix))
-			{
-				prefix = "CUSTOM";
-            }
-			else
-            {
-                var dict = new Dictionary<string, string> {
-					{ "INFECTION", "INFECTION" },
-                    { "CASUAL", "CASUAL"},
-                    { "HUNT", "HUNT" },
-                    { "BATTLE", "PAINTBRAWL"},
-				};
-
-				foreach (var item in dict)
-                {
-					if (gamemode.Contains(item.Key))
-                    {
-						prefix = item.Value;
-						break;
-                    }
-                } 
-            }
+			var prefix = "CUSTOM";
 			GorillaComputer.instance.currentGameModeText.Value = "CURRENT MODE\n" + prefix;
 
 			Events.RoomJoinedArgs args = new Events.RoomJoinedArgs
@@ -90,6 +69,10 @@ namespace Utilla
         {
 			if (!propertiesThatChanged.TryGetValue("gameMode", out var gameModeObject)) return;
 			if (!(gameModeObject is string gameMode)) return;
+			if (!gameMode.Contains(Models.Gamemode.GamemodePrefix))
+			{
+				gameMode = "MODDED_" + gameMode;
+            }
 
 			if (lastRoom.Gamemode.Contains(Models.Gamemode.GamemodePrefix) && !gameMode.Contains(Models.Gamemode.GamemodePrefix))
 			{
