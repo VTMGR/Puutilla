@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Linq.Expressions;
@@ -302,7 +302,7 @@ namespace Utilla
 					BaseGamemode.Casual => GameModeType.Casual,
 					BaseGamemode.Infection => GameModeType.Infection,
 					BaseGamemode.Hunt => GameModeType.Hunt,
-					BaseGamemode.PaintbrawlBattle => GameModeType.Battle,
+					BaseGamemode.PaintbrawlBattle => GameModeType.Paintbrawl,
 					_ => null
 				};
 
